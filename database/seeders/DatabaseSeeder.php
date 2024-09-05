@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             SellerSeeder::class,
             ItemSeeder::class,
-            TransaksiSeeder::class,
+            // TransaksiSeeder::class,
             GroupSeeder::class,
         ]);
     }

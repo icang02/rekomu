@@ -33,6 +33,11 @@
   <link rel="stylesheet" href="{{ asset('front') }}/assets/css/responsive.css">
 
   <style>
+    .single-latest-news {
+      border-top-right-radius: 11px;
+      border-top-left-radius: 11px;
+    }
+
     @keyframes text-animate {
 
       0%,

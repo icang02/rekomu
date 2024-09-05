@@ -7,6 +7,7 @@ use App\Models\Slider;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -58,6 +59,7 @@ class Riwayat extends Component
 		]);
 	}
 
+	#[Title('Riwayat Pesanan')]
 	public function render()
 	{
 		$slider = Slider::latest('id')->first();

@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\Slider;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -41,6 +42,7 @@ class Rekomendasi extends Component
 		foreach ($userItemMatrix as $user => $items) {
 			$userMean[$user] = array_sum($items) / count($items);
 		}
+		// dd($userMean);
 
 		// Simpan Rating Item User Yang Sedang Login
 		$itemsRating_u = $userItemMatrix[Auth::user()->id];
@@ -71,11 +73,13 @@ class Rekomendasi extends Component
 			}
 			$userSimilarity[$idUser_j] = !is_nan($result) ? $result : 0;
 		}
+		// dd($userSimilarity);
 
 		// Batasi Hanya User Dengan Similaritas Tertinggi Yang Diambil
 		$userSimilarity = array_filter($userSimilarity, function ($value) {
 			return floatval($value) >= 0.7;
 		});
+		// dd($userSimilarity);
 
 		// Jika Tidak Ada Similaritas Yang Cocok Return Nilai Kosong
 		if (empty($userSimilarity))
@@ -84,6 +88,7 @@ class Rekomendasi extends Component
 		$predicItem = [];
 		foreach (array_keys($userSimilarity) as $item)
 			array_push($predicItem, $userItemMatrix[$item]);
+		// dd($predicItem);
 
 		$willBeRecommItem = [];
 		foreach ($predicItem as $items_j) {
@@ -94,10 +99,11 @@ class Rekomendasi extends Component
 			}
 		}
 		$willBeRecommItem = array_unique($willBeRecommItem);
-
+		// dd($willBeRecommItem);
 		// 4. Hitung Nilai Prediksi Item
 		$userBasedPredictedRatings = [];
-		foreach ($willBeRecommItem as $idItem) {
+		foreach ($willBeRecommItem as $i => $idItem) {
+			// if ($i == 1) {
 			$sumPembilang = 0;
 			$sumPenyebut  = 0;
 			foreach ($userSimilarity as $idUser_j => $similarity_j) {
@@ -110,7 +116,9 @@ class Rekomendasi extends Component
 			} else {
 				$userBasedPredictedRatings[$idItem] = $userMean[Auth::user()->id];
 			}
+			// }
 		}
+		// dd($userBasedPredictedRatings);
 
 		// Filter dan Batasi Nilai Prediksi
 		$userBasedPredictedRatings = array_filter($userBasedPredictedRatings, function ($predictRating) {
@@ -124,6 +132,7 @@ class Rekomendasi extends Component
 		return $userBasedPredictedRatings;
 	}
 
+	#[Title('Rekomendasi')]
 	public function render()
 	{
 		$resultUserBased = $this->userBasedCF();
