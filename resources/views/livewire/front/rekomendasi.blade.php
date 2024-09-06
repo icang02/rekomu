@@ -50,7 +50,6 @@
                         <i class="fa fa-eye"></i> {{ $item->count_view }}x dilihat
                       </div>
                     </div>
-
                     <div class="mt-1 d-flex justify-content-between">
                       <div class="d-flex align-items-center ">
                         <div class="d-flex align-items-center">
@@ -93,7 +92,6 @@
                         &nbsp; <sup>prediction</sup> ({{ round($item->predict_rating, 1) }})
                       </small>
                     </div>
-
                     <a href="{{ route('front.produk-detail', $item->slug) }}" wire:navigate
                       class="read-more-btn">selengkapnya <i class="fas fa-angle-right"></i></a>
                   </div>
@@ -102,8 +100,7 @@
             @empty
               <div class="col-12">
                 <div class="h6 text-muted">
-                  {{ $this->search ? 'Data yang dicari tidak ditemukan.' : 'Silahkan lakukan transaksi sebanyak mungkin untuk mendapatkan rekomendasi.' }}
-                </div>
+                  {{ $this->search ? 'Data yang dicari tidak ditemukan.' : 'Belum ada data produk.' }}</div>
               </div>
             @endforelse
           </div>
@@ -148,5 +145,4 @@
     </div>
   </div>
   <!-- end latest news -->
-
 </div>

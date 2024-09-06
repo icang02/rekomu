@@ -37,6 +37,7 @@ class Rekomendasi extends Component
 		foreach ($dataTransaksi as $transaksi) {
 			$userItemMatrix[$transaksi->user_id][$transaksi->item_id] = $transaksi->rating;
 		}
+		// dd($userItemMatrix);
 		// 2. Hitung Rata-Rata Rating Tiap User
 		$userMean = [];
 		foreach ($userItemMatrix as $user => $items) {
@@ -45,7 +46,7 @@ class Rekomendasi extends Component
 		// dd($userMean);
 
 		// Simpan Rating Item User Yang Sedang Login
-		$itemsRating_u = $userItemMatrix[Auth::user()->id];
+		$itemsRating_u  = $userItemMatrix[Auth::user()->id];
 		$userSimilarity = [];
 
 		// Filter User-Item-Matrix Yang Bukan ID User Yang Sedang Login
@@ -56,22 +57,26 @@ class Rekomendasi extends Component
 		// 3. Loop User-Item-Marix Untuk Menghitung Similaritas
 		foreach ($userItemMatrix as $idUser_j => $itemsRating_j) {
 			$sameRateProduk = array_intersect_key($itemsRating_u, $itemsRating_j);
-
-			$pembilang = 0;
-			$penyebut1  = 0;
-			$penyebut2 = 0;
+			$pembilang      = 0;
+			$sigma_i        = 0;
+			$sigma_j        = 0;
 
 			foreach ($sameRateProduk as $key => $_) {
+				// dd($itemsRating_u[$key]);
+				// dd($userMean[Auth::user()->id]);
+				// dd($itemsRating_j[$key]);
+				// dd($userMean[$idUser_j]);
+
 				$pembilang += ($itemsRating_u[$key] - $userMean[Auth::user()->id]) * ($itemsRating_j[$key] - $userMean[$idUser_j]);
-				$penyebut1 += pow($itemsRating_u[$key] - $userMean[Auth::user()->id], 2);
-				$penyebut2 += pow($itemsRating_j[$key] - $userMean[$idUser_j], 2);
+				$sigma_i   += pow($itemsRating_u[$key] - $userMean[Auth::user()->id], 2);
+				$sigma_j   += pow($itemsRating_j[$key] - $userMean[$idUser_j], 2);
 			}
-			if ($pembilang != 0 && sqrt($penyebut1) != 0 && sqrt($penyebut2) != 0) {
-				$result = $pembilang / (sqrt($penyebut1) * sqrt($penyebut2));
-			} else {
-				$result = 0;
-			}
-			$userSimilarity[$idUser_j] = !is_nan($result) ? $result : 0;
+
+			$result = $pembilang != 0 && sqrt($sigma_i) != 0 && sqrt($sigma_j) != 0
+				? $pembilang / (sqrt($sigma_i) * sqrt($sigma_j))
+				: 0;
+			// dd($pembilang);
+			$userSimilarity[$idUser_j] = $result;
 		}
 		// dd($userSimilarity);
 
@@ -103,7 +108,6 @@ class Rekomendasi extends Component
 		// 4. Hitung Nilai Prediksi Item
 		$userBasedPredictedRatings = [];
 		foreach ($willBeRecommItem as $i => $idItem) {
-			// if ($i == 1) {
 			$sumPembilang = 0;
 			$sumPenyebut  = 0;
 			foreach ($userSimilarity as $idUser_j => $similarity_j) {
@@ -116,7 +120,6 @@ class Rekomendasi extends Component
 			} else {
 				$userBasedPredictedRatings[$idItem] = $userMean[Auth::user()->id];
 			}
-			// }
 		}
 		// dd($userBasedPredictedRatings);
 
