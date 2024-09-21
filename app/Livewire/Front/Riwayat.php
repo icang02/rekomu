@@ -66,7 +66,7 @@ class Riwayat extends Component
 		$transactions = Transaction::with(['item', 'seller.user'])
 			->where('user_id', Auth::user()->id)
 			->orderBy('transaction_time', 'desc')
-			->paginate(5);
+			->paginate(100);
 		$title = 'Riwayat Pesanan';
 
 		return view('livewire.front.riwayat', compact('slider', 'transactions', 'title'));

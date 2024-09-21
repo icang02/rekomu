@@ -2,9 +2,11 @@
 
 namespace App\Livewire\Front;
 
+use App\Livewire\Admin\Transaksi;
 use App\Models\Category;
 use App\Models\Item;
 use App\Models\Slider;
+use App\Models\Transaction;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -34,6 +36,7 @@ class Produk extends Component
 	#[Title('Produk')]
 	public function render()
 	{
+		dd(Transaction::all()->count());
 		$items = Item::with('seller.user')
 			->where(function ($query) {
 				$query->where('name', 'like', '%' . $this->search . '%')
