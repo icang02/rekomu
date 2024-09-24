@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Item;
 use App\Models\Seller;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Layout;
@@ -14,7 +15,6 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
-use function Laravel\Prompts\select;
 
 #[Layout('components.layouts.admin')]
 class Produk extends Component
@@ -24,6 +24,7 @@ class Produk extends Component
 
   public $id, $name, $price, $image, $category_id, $seller_id;
   public $imageItem;
+  public $percentage;
 
   #[Url('show')]
   public $show = 10;
@@ -46,6 +47,11 @@ class Produk extends Component
     'image.mimes'    => 'Format file harus png, jpg, atau jpeg.',
     'image.max'      => 'Ukuran file maksimal 2Mb.'
   ];
+
+  public function mount()
+  {
+    $this->percentage = Setting::findOrFail(1)->value;
+  }
 
   public function updatedSearch()
   {
@@ -79,7 +85,7 @@ class Produk extends Component
     $item = Item::create([
       'name'        => ucwords($this->name),
       'slug'        => generateSlug($this->name),
-      'price'       => $this->price * 1.05,
+      'price'       => $this->price * (((int) $this->percentage / 100) + 1),
       'real_price'  => $this->price,
       'image'       => $imageName,
       'category_id' => $this->category_id,
@@ -140,8 +146,13 @@ class Produk extends Component
       $this->seller_id = $sellers->id;
     }
     $categories = Category::orderBy('name')->get();
+    $percentage = Setting::findOrFail(1)->value;
 
-
-    return view('livewire.admin.produk', compact('items', 'categories', 'sellers'));
+    return view('livewire.admin.produk', compact(
+      'items',
+      'categories',
+      'sellers',
+      'percentage'
+    ));
   }
 }

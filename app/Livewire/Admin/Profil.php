@@ -2,6 +2,8 @@
 
 namespace App\Livewire\Admin;
 
+use App\Models\Item;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,6 +22,9 @@ class Profil extends Component
     public $image, $oldEmail;
     public $address, $location;
     public $new_password, $new_password_confirmation;
+
+    public $percentage;
+
 
     protected $rules = [
         'name'         => ['required'],
@@ -50,6 +55,8 @@ class Profil extends Component
             $this->address  = Auth::user()->seller->address;
             $this->location = Auth::user()->seller->location;
         }
+
+        $this->percentage = Setting::findOrFail(1)->value;
     }
 
     public function updateProfil()
@@ -82,6 +89,26 @@ class Profil extends Component
         $this->imageData = $img ?? $this->imageData;
         $this->reset('image', 'new_password', 'new_password_confirmation');
         $this->dispatch('submitted', type: 'success', title: 'Notifikasi', message: 'Profil diupdate.');
+    }
+
+    public function changePercentagePrice()
+    {
+        if ($this->percentage > 100)
+            return $this->dispatch('submitted', type: 'danger', title: 'Notifikasi', message: 'Maksimal 100%.');
+
+        Setting::findOrFail(1)->update([
+            'value' => (int) $this->percentage
+        ]);
+
+        $percentage = Setting::findOrFail(1)->value;
+        $items = Item::all();
+        foreach ($items as $item) {
+            $item->update([
+                'price' => $item->real_price * (((int) $percentage / 100) + 1)
+            ]);
+        }
+
+        $this->dispatch('submitted', type: 'success', title: 'Notifikasi', message: 'Persentase kenaikan harga produk diupdate.');
     }
 
     #[Title('Profil')]

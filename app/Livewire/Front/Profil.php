@@ -15,7 +15,7 @@ class Profil extends Component
 {
 	use WithFileUploads;
 
-	public $name, $email, $imageData;
+	public $name, $email, $imageData, $contact, $address;
 	public $image, $oldEmail;
 	public $new_password, $new_password_confirmation;
 	public $check_email, $isValidCheck = false;
@@ -26,12 +26,15 @@ class Profil extends Component
 		$this->email     = Auth::user()->email;
 		$this->oldEmail  = Auth::user()->email;
 		$this->imageData = Auth::user()->image;
+		$this->contact   = Auth::user()->contact;
+		$this->address   = Auth::user()->address;
 	}
 
 	protected $rules = [
-		'name'  => ['required'],
-		'email' => ['required', 'unique:users'],
-		'image' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048']
+		'name'    => ['required'],
+		'email'   => ['required', 'unique:users'],
+		'image'   => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],
+		'contact' => ['nullable', 'numeric']
 	];
 
 	protected $messages = [
@@ -39,7 +42,8 @@ class Profil extends Component
 		'email.required' => 'Email tidak boleh kosong.',
 		'email.unique' => 'Email sudah pernah digunakan.',
 		'image.mimes' => 'Format file harus png, jpg, atau jpeg.',
-		'image.max' => 'Maksimal ukuran file 2Mb.'
+		'image.max' => 'Maksimal ukuran file 2Mb.',
+		'contact.numeric' => 'Harus berupa angka.',
 	];
 
 	public function updatedCheckEmail()
@@ -66,13 +70,17 @@ class Profil extends Component
 			$img = $this->image->store('user');
 		}
 		$user->update([
-			'name'  => ucwords($this->name),
-			'email' => $this->email,
-			'image' => $img ?? $this->imageData
+			'name'    => ucwords($this->name),
+			'email'   => $this->email,
+			'image'   => $img ?? $this->imageData,
+			'contact' => $this->contact,
+			'address' => trim(ucfirst($this->address)) == '' ? null : trim(ucfirst($this->address)),
 		]);
 
-		$this->name  = $user->name;
-		$this->email = $user->email;
+		$this->name    = $user->name;
+		$this->email   = $user->email;
+		$this->contact = $user->contact;
+		$this->address = ucfirst($user->address);
 		session()->flash('success', 'Data profil diupdate.');
 	}
 

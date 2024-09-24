@@ -36,7 +36,6 @@ class Produk extends Component
 	#[Title('Produk')]
 	public function render()
 	{
-		dd(Transaction::all()->count());
 		$items = Item::with('seller.user')
 			->where(function ($query) {
 				$query->where('name', 'like', '%' . $this->search . '%')

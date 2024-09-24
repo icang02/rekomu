@@ -14,16 +14,22 @@ class Checkout extends Component
 {
 	public $shipping_address, $recipient_contact;
 
+	public function mount()
+	{
+		if (!Auth::user()->contact || !Auth::user()->address)
+			return redirect()->route('front.keranjang');
+	}
+
 	public function processCheckout()
 	{
-		$this->validate([
-			'shipping_address'  => ['required'],
-			'recipient_contact' => ['required', 'regex:/^628[1-9][0-9]{7,12}$/'],
-		], [
-			'shipping_address.required'  => 'Masukkan detail alamat pengiriman.',
-			'recipient_contact.required' => 'Masukkan nomor kontak penerima.',
-			'recipient_contact.regex' => 'Nomor telpon diawali dengan 628xxx.'
-		]);
+		// $this->validate([
+		// 	'shipping_address'  => ['required'],
+		// 	'recipient_contact' => ['required', 'regex:/^628[1-9][0-9]{7,12}$/'],
+		// ], [
+		// 	'shipping_address.required'  => 'Masukkan detail alamat pengiriman.',
+		// 	'recipient_contact.required' => 'Masukkan nomor kontak penerima.',
+		// 	'recipient_contact.regex' => 'Nomor telpon diawali dengan 628xxx.'
+		// ]);
 		$this->dispatch('valid-checkout');
 	}
 
@@ -38,8 +44,8 @@ class Checkout extends Component
 				'code'              => generateCodeTransaction(Carbon::now()),
 				'quantity'          => $cart->quantity,
 				'transaction_time'  => Carbon::now(),
-				'shipping_address'  => ucwords($this->shipping_address),
-				'recipient_contact' => $this->recipient_contact
+				'shipping_address'  => Auth::user()->address,
+				'recipient_contact' => Auth::user()->contact,
 			]);
 		}
 		Cart::where('user_id', Auth::user()->id)->delete();
@@ -55,7 +61,7 @@ class Checkout extends Component
 		$itemCheckout = Cart::with('item')->where('user_id', Auth::user()->id)->get();
 		$title = 'Checkout';
 
-		abort_if($itemCheckout->count() == 0, 404);
+		if ($itemCheckout->count() == 0) redirect()->route('front.keranjang');
 
 		return view('livewire.front.checkout', compact('slider', 'itemCheckout', 'title'));
 	}

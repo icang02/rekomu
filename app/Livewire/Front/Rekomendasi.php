@@ -82,7 +82,7 @@ class Rekomendasi extends Component
 
 		// Batasi Hanya User Dengan Similaritas Tertinggi Yang Diambil
 		$userSimilarity = array_filter($userSimilarity, function ($value) {
-			return floatval($value) >= 0.7;
+			return floatval($value) >= 0.5;
 		});
 		// dd($userSimilarity);
 
@@ -139,6 +139,7 @@ class Rekomendasi extends Component
 	public function render()
 	{
 		$resultUserBased = $this->userBasedCF();
+
 		if (empty($resultUserBased)) {
 			$items = new \Illuminate\Pagination\LengthAwarePaginator([], 0, 11, 1, [
 				'path' => \Illuminate\Pagination\Paginator::resolveCurrentPath(),
@@ -159,7 +160,7 @@ class Rekomendasi extends Component
 						$query->where('slug', $this->category);
 					});
 				})
-				->paginate(11);
+				->paginate(20);
 
 			// Tambahkan kolom predict_rating
 			$items->getCollection()->transform(function ($item) use ($resultUserBased) {
@@ -176,7 +177,11 @@ class Rekomendasi extends Component
 		$slider     = Slider::latest('id')->first();
 		$categories = Category::orderBy('name')->get();
 
-
-		return view('livewire.front.rekomendasi', compact('slider', 'title', 'items', 'categories'));
+		return view('livewire.front.rekomendasi', compact(
+			'slider',
+			'title',
+			'items',
+			'categories'
+		));
 	}
 }

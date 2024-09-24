@@ -5,11 +5,14 @@ namespace App\Livewire\Front;
 use App\Models\Cart as ModelsCart;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Cart extends Component
 {
+	use LivewireAlert;
+
 	public $quantities = [];
 
 	public function mount()
@@ -32,6 +35,17 @@ class Cart extends Component
 		$cart->delete();
 		$this->dispatch('cartUpdated');
 	}
+
+	public function checkProfil()
+	{
+		return $this->alert('info', 'Lengkapi data profil terlebih dulu', [
+			'position' => 'top-start',
+			'timer'    => 3000,
+			'toast'    => true,
+			'width'    => '380',
+		]);
+	}
+
 
 	#[Title('Keranjang')]
 	public function render()

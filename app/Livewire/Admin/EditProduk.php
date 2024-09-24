@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Item;
 use App\Models\Seller;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Layout;
@@ -20,6 +21,8 @@ class EditProduk extends Component
   public $id, $name, $price, $real_price, $category_id, $seller_id, $imageItem;
   public $image;
 
+  public $percentage;
+
   public function mount($id)
   {
     $item              = Item::findOrFail($id);
@@ -30,13 +33,15 @@ class EditProduk extends Component
     $this->imageItem   = $item->image;
     $this->category_id = $item->category_id;
     $this->seller_id   = $item->seller_id;
+
+    $this->percentage = Setting::findOrFail(1)->value;
   }
 
   public function updatedRealPrice()
   {
     // dd($this->real_price);
     if ($this->real_price !== "") {
-      $this->price = $this->real_price * 1.05;
+      $this->price = $this->real_price * (((int) $this->percentage / 100) + 1);
     }
   }
 
@@ -67,7 +72,7 @@ class EditProduk extends Component
     $item->update([
       'name' => ucwords($this->name),
       'slug' => generateSlug($this->name),
-      'price' => $this->real_price * 1.05,
+      'price' => $this->real_price * (((int) $this->percentage / 100) + 1),
       'real_price' => $this->real_price,
       'image' => $img,
       'category_id' => $this->category_id,
