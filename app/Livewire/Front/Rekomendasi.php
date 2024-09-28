@@ -21,6 +21,7 @@ class Rekomendasi extends Component
 	#[Url('category')]
 	public $category;
 
+
 	public function userBasedCF()
 	{
 		// Query Data Tabel Transaksi
@@ -62,11 +63,6 @@ class Rekomendasi extends Component
 			$sigma_j        = 0;
 
 			foreach ($sameRateProduk as $key => $_) {
-				// dd($itemsRating_u[$key]);
-				// dd($userMean[Auth::user()->id]);
-				// dd($itemsRating_j[$key]);
-				// dd($userMean[$idUser_j]);
-
 				$pembilang += ($itemsRating_u[$key] - $userMean[Auth::user()->id]) * ($itemsRating_j[$key] - $userMean[$idUser_j]);
 				$sigma_i   += pow($itemsRating_u[$key] - $userMean[Auth::user()->id], 2);
 				$sigma_j   += pow($itemsRating_j[$key] - $userMean[$idUser_j], 2);
@@ -160,7 +156,7 @@ class Rekomendasi extends Component
 						$query->where('slug', $this->category);
 					});
 				})
-				->paginate(20);
+				->paginate(30);
 
 			// Tambahkan kolom predict_rating
 			$items->getCollection()->transform(function ($item) use ($resultUserBased) {

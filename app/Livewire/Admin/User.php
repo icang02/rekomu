@@ -114,6 +114,7 @@ class User extends Component
   public function render()
   {
     $users = ModelsUser::where('group_id', 2)
+      ->where('name', 'like', "%$this->search%")
       ->orderBy('name')
       ->paginate($this->show > 50 ? 50 : $this->show);
 
