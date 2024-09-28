@@ -126,6 +126,7 @@ class Rekomendasi extends Component
 
 		// Urutkan Berdasarkan Nilai Prediksi Tertinggi
 		arsort($userBasedPredictedRatings);
+		// dd($userBasedPredictedRatings);
 
 		// Return Id Item & prediction value
 		return $userBasedPredictedRatings;
