@@ -40,7 +40,7 @@ class Riwayat extends Component
 	{
 		$transaction = Transaction::find($this->transactionId);
 		$transaction->update([
-			'rating' => $this->ratingInput,
+			'rating' => $this->ratingInput == "" || $this->ratingInput == 0 ? null: $this->ratingInput,
 			'review' => strlen($this->reviewInput) == 0 ? null : ucfirst($this->reviewInput)
 		]);
 
