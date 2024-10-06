@@ -231,13 +231,6 @@ class UserSeeder extends Seeder
         'group_id' => 2,
       ],
       [
-        'name'     => 'Renaldi',
-        'email'    => 'renaldi700302@gmail.com',
-        'password' => bcrypt('renaldi700302'),
-        'image'   => null,
-        'group_id' => 2,
-      ],
-      [
         'name'     => "La ode muh. TaufiqQur'Rahman O.T.",
         'email'    => 'Kiong.y.143@gmail.com',
         'password' => bcrypt('Kiong.y.143'),
