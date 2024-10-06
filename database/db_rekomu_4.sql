@@ -3,13 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
-<<<<<<< HEAD
--- Waktu pembuatan: 29 Sep 2024 pada 12.54
-=======
--- Waktu pembuatan: 06 Okt 2024 pada 11.45
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
+-- Waktu pembuatan: 06 Okt 2024 pada 11.46
 -- Versi server: 8.0.30
--- Versi PHP: 8.3.11
+-- Versi PHP: 8.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_rekomu`
+-- Database: `db_rekomu_4`
 --
 
 -- --------------------------------------------------------
@@ -221,7 +217,7 @@ INSERT INTO `items` (`id`, `category_id`, `seller_id`, `name`, `slug`, `price`, 
 (64, 1, 6, 'Lemon Tea', '32-lemon-tea', 15750, 15000, NULL, 'item/Lemon Tea.png', 0),
 (65, 1, 6, 'Es Lotus', '32-es-lotus', 21000, 20000, NULL, 'item/Es Lotus.png', 0),
 (66, 1, 6, 'Nasi Ayam Kemangi', '32-nasi-ayam-kemangi', 15750, 15000, NULL, 'item/Nasi Ayam Kemangi.png', 0),
-(67, 1, 6, 'Pisang Original', '32-pisang-original', 10500, 10000, 3.5909, 'item/Pisang Original.png', 13),
+(67, 1, 6, 'Pisang Original', '32-pisang-original', 10500, 10000, 3.5714, 'item/Pisang Original.png', 13),
 (68, 1, 6, 'Pisang Keju Susu', '32-pisang-keju-susu', 15750, 15000, NULL, 'item/Pisang Keju Susu.png', 0),
 (69, 1, 6, 'Kentang Goreng', '32-kentang-goreng', 21000, 20000, 4.3333, 'item/Kentang Goreng.png', 23),
 (70, 1, 7, 'Chicken Katsu', '33-chicken-katsu', 21000, 20000, NULL, 'item/Chicken Katsu.png', 0),
@@ -249,7 +245,7 @@ INSERT INTO `items` (`id`, `category_id`, `seller_id`, `name`, `slug`, `price`, 
 (92, 1, 9, 'Bakso Goreng', '35-bakso-goreng', 15750, 15000, NULL, 'item/Bakso Goreng.jpg', 0),
 (93, 1, 9, 'Bakso Kuah', '35-bakso-kuah', 15750, 15000, NULL, 'item/Bakso Kuah.jpg', 0),
 (94, 1, 9, 'Nasi Goreng', '35-nasi-goreng', 21000, 20000, NULL, 'item/Nasi Goreng.jpg', 0),
-(95, 1, 9, 'Burger', '35-burger', 21000, 20000, 3.619, 'item/Burger.jpg', 19),
+(95, 1, 9, 'Burger', '35-burger', 21000, 20000, 3.7, 'item/Burger.jpg', 19),
 (96, 1, 9, 'Ayam Goreng Crispy', '35-ayam-goreng-crispy', 31500, 30000, NULL, 'item/Ayam Goreng Crispy.jpg', 0),
 (97, 1, 9, 'Ayam Geprek', '35-ayam-geprek', 31500, 30000, 4.0909, 'item/Ayam Geprek.jpg', 18),
 (98, 1, 9, 'Ayam Lalapan', '35-ayam-lalapan', 12600, 12000, NULL, 'item/Ayam Lalapan.jpg', 0),
@@ -288,7 +284,7 @@ INSERT INTO `items` (`id`, `category_id`, `seller_id`, `name`, `slug`, `price`, 
 (131, 1, 11, 'Telur Puyu Bacem', '37-telur-puyu-bacem', 5250, 5000, NULL, 'item/Telur Puyu Bacem.png', 0),
 (132, 1, 12, 'Sosis Kentang', '38-sosis-kentang', 21000, 20000, NULL, 'item/Sosis Kentang.jpg', 0),
 (133, 1, 12, 'Kentang Goreng Kelapa Dua', '38-kentang-goreng-kelapa-dua', 15750, 15000, NULL, 'item/Kentang Goreng Kelapa Dua.png', 0),
-(134, 1, 12, 'Ubi Goreng', '38-ubi-goreng', 15750, 15000, 4.1739, 'item/Ubi Goreng.jpg', 15),
+(134, 1, 12, 'Ubi Goreng', '38-ubi-goreng', 15750, 15000, 4.1364, 'item/Ubi Goreng.jpg', 15),
 (135, 1, 12, 'Ayam Goreng Gepur', '38-ayam-goreng-gepur', 26250, 25000, NULL, 'item/Ayam Goreng Gepur.jpg', 1),
 (136, 1, 12, 'Sub Ubi', '38-sub-ubi', 17850, 17000, NULL, 'item/Sup Ubi.jpg', 0),
 (137, 1, 12, 'Mie Goreng Tek Tek', '38-mie-goreng-tek-tek', 21000, 20000, NULL, 'item/Mie Goreng Tek Tek.png', 0),
@@ -400,28 +396,17 @@ INSERT INTO `items` (`id`, `category_id`, `seller_id`, `name`, `slug`, `price`, 
 (243, 3, 20, 'Rok Bludru Plisket', '46-rok-bludru-plisket', 84000, 80000, NULL, 'item/Rok Bludru Plisket.jpg', 0),
 (244, 3, 20, 'Kaftan Navy Payet', '46-kaftan-navy-payet', 262500, 250000, NULL, 'item/Kaftan Navy Payet.jpg', 0),
 (245, 3, 20, 'Gamis Sage', '46-gamis-sage', 294000, 280000, NULL, 'item/Gamis Sage.jpg', 0),
-<<<<<<< HEAD
-(246, 3, 20, 'Abaya Black Plisket', '46-abaya-black-plisket', 367500, 350000, 4.2778, 'item/Abaya Black Plisket.jpg', 18),
-=======
 (246, 3, 20, 'Abaya Black Plisket', '46-abaya-black-plisket', 367500, 350000, 4.1429, 'item/Abaya Black Plisket.jpg', 18),
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 (247, 3, 20, 'Gamis Plisket Cerrutty', '46-gamis-plisket-cerrutty', 294000, 280000, NULL, 'item/Gamis Plisket Cerrutty.jpg', 0),
 (248, 3, 20, 'Blouse Payet Premium', '46-blouse-payet-premium', 178500, 170000, NULL, 'item/Blouse Payet Premium.jpg', 0),
 (249, 3, 20, 'Rok Jeans Span', '46-rok-jeans-span', 141750, 135000, 3.7895, 'item/Rok Jeans Span.jpg', 12),
 (250, 3, 20, 'Rajut Crop', '46-rajut-crop', 126000, 120000, NULL, 'item/Rajut Crop.jpg', 0),
 (251, 3, 20, 'Kemeja Polos Linen', '46-kemeja-polos-linen', 115500, 110000, NULL, 'item/Kemeja Polos Linen.jpg', 0),
 (252, 3, 20, 'Rajut Salur', '46-rajut-salur', 136500, 130000, NULL, 'item/Rajut Salur.jpg', 0),
-<<<<<<< HEAD
-(253, 3, 20, 'Kemeja Crinkle', '46-kemeja-crinkle', 126000, 120000, 4.3125, 'item/Kemeja Crinkle.jpg', 11),
-(254, 3, 20, 'Outer Rajut', '46-outer-rajut', 157500, 150000, 4, 'item/Outer Rajut.jpg', 14),
-(255, 3, 20, 'Kemeja Motif', '46-kemeja-motif', 131250, 125000, 3.9375, 'item/Kemeja Motif.jpg', 13),
-(256, 3, 20, 'Outer Crop', '46-outer-crop', 157500, 150000, 3.6667, 'item/Outer Crop.jpg', 11),
-=======
 (253, 3, 20, 'Kemeja Crinkle', '46-kemeja-crinkle', 126000, 120000, 3.95, 'item/Kemeja Crinkle.jpg', 11),
 (254, 3, 20, 'Outer Rajut', '46-outer-rajut', 157500, 150000, 3.8, 'item/Outer Rajut.jpg', 14),
 (255, 3, 20, 'Kemeja Motif', '46-kemeja-motif', 131250, 125000, 3.85, 'item/Kemeja Motif.jpg', 13),
 (256, 3, 20, 'Outer Crop', '46-outer-crop', 157500, 150000, 3.5789, 'item/Outer Crop.jpg', 11),
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 (257, 3, 20, 'Rajut Knit', '46-rajut-knit', 173250, 165000, NULL, 'item/Rajut Knit.jpg', 0),
 (258, 3, 20, 'Outer Rajut Premium', '46-outer-rajut-premium', 126000, 120000, NULL, 'item/Outer Rajut Premium.jpg', 0),
 (259, 3, 20, 'Outer Knit Plisket', '46-outer-knit-plisket', 78750, 75000, NULL, 'item/Outer Knit Plisket.jpg', 0),
@@ -604,12 +589,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-<<<<<<< HEAD
-('MNeY1nTe8hxIrjlgNaGjS2dBSQd3XVg7xyGfM3e2', 43, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN08yTnJQNTBLOEVGS0NzUDFrbjRnMGpuaWJHUjZxNGs1T0NtRWR5SCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9yZWtvbXUudGVzdC9yaXdheWF0LXBlc2FuYW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0Mzt9', 1727614330),
-('YicSmPiFYfMPMSOjtVSWKoTyG4nnzp1cuXE2ZJVt', 43, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUjloOUd5VTQzN3lSV0dKaTgzaXlvNGZpd29yWlBnRWxKM0d5cDZ1MyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9yZWtvbXUudGVzdC9yZWtvbWVuZGFzaSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjQzO30=', 1727536634);
-=======
-('VhK7tRV6Yv4bZVemsazsHtpFCtvxJRKKZhvhBNhW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiejVBMk56dUJJcFhSbjZRVzNSVUlZWGdlYjYyVnBVUmdUSVBLOU1mVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9yZWtvbXUudGVzdC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728130124);
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
+('V30WTNki4fqtG9uuiZM60lywMH8W0oj0iM6NuJs6', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNVZBdkdoSG9ud2dGc1FwTUtzdUlpeFlQcjZ0RW9kUkY5S083TUlkWCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9yZWtvbXUudGVzdC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728131266);
 
 -- --------------------------------------------------------
 
@@ -1067,136 +1047,6 @@ INSERT INTO `transactions` (`id`, `item_id`, `user_id`, `seller_id`, `code`, `tr
 (388, 256, 42, 20, 'trx-202409114480', '2024-09-11 20:28:36', 1, 3, NULL, NULL, 'Jl. Badewi', '6282175321886'),
 (389, 255, 42, 20, 'trx-202409116766', '2024-09-11 20:28:36', 1, 3, NULL, NULL, 'Jl. Badewi', '6282175321886'),
 (390, 69, 42, 6, 'trx-202409113962', '2024-09-11 20:28:37', 3, 5, NULL, NULL, 'Jl. Badewi', '6282175321886'),
-(512, 134, 43, 12, 'trx-202409184918', '2024-09-18 17:48:26', 1, 5, NULL, NULL, 'Kolaka', '6282233504423'),
-(513, 95, 43, 9, 'trx-202409184076', '2024-09-18 17:48:26', 1, 2, NULL, NULL, 'Kolaka', '6282233504423'),
-(514, 67, 43, 6, 'trx-202409181255', '2024-09-18 17:48:26', 2, 4, NULL, NULL, 'Kolaka', '6282233504423'),
-(515, 63, 43, 6, 'trx-202409186717', '2024-09-18 17:48:26', 1, 5, NULL, NULL, 'Kolaka', '6282233504423'),
-(516, 61, 43, 6, 'trx-202409183664', '2024-09-18 17:48:26', 1, 3, NULL, NULL, 'Kolaka', '6282233504423'),
-(517, 200, 43, 17, 'trx-202409189904', '2024-09-18 17:48:26', 1, 2, NULL, NULL, 'Kolaka', '6282233504423'),
-(518, 10, 43, 1, 'trx-202409186882', '2024-09-18 17:48:26', 1, 4, NULL, NULL, 'Kolaka', '6282233504423'),
-(519, 21, 43, 3, 'trx-202409187345', '2024-09-18 17:48:26', 1, 5, NULL, NULL, 'Kolaka', '6282233504423'),
-(520, 38, 43, 5, 'trx-202409182014', '2024-09-18 17:48:26', 1, 3, NULL, NULL, 'Kolaka', '6282233504423'),
-(527, 125, 44, 11, 'trx-202409181538', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(528, 10, 44, 1, 'trx-202409182160', '2024-09-18 18:52:20', 1, 4, NULL, NULL, 'Kolaka', '6285234578897'),
-(530, 21, 44, 3, 'trx-202409187006', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(532, 38, 44, 5, 'trx-202409182143', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(533, 34, 44, 4, 'trx-202409180861', '2024-09-18 18:52:20', 1, 4, NULL, NULL, 'Kolaka', '6285234578897'),
-(534, 40, 44, 5, 'trx-202409186233', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(535, 95, 44, 9, 'trx-202409188768', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(536, 5, 44, 1, 'trx-202409184118', '2024-09-18 18:52:20', 1, 3, NULL, NULL, 'Kolaka', '6285234578897'),
-(539, 254, 44, 20, 'trx-202409180175', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(542, 286, 44, 22, 'trx-202409183495', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(543, 273, 44, 21, 'trx-202409183119', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(544, 263, 44, 21, 'trx-202409185696', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(546, 63, 44, 6, 'trx-202409189407', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(547, 253, 44, 20, 'trx-202409188251', '2024-09-18 18:52:20', 1, 4, NULL, NULL, 'Kolaka', '6285234578897'),
-(548, 87, 44, 9, 'trx-202409183218', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(549, 61, 44, 6, 'trx-202409180819', '2024-09-18 18:52:20', 1, 4, NULL, NULL, 'Kolaka', '6285234578897'),
-(551, 255, 44, 20, 'trx-202409183618', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(552, 171, 44, 15, 'trx-202409188265', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(553, 69, 44, 6, 'trx-202409181742', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(554, 200, 44, 17, 'trx-202409183097', '2024-09-18 18:52:20', 1, 3, NULL, NULL, 'Kolaka', '6285234578897'),
-(556, 249, 44, 20, 'trx-202409184792', '2024-09-18 18:52:20', 1, 5, NULL, NULL, 'Kolaka', '6285234578897'),
-(560, 34, 45, 4, 'trx-202409188895', '2024-09-18 20:14:47', 1, 4, NULL, NULL, 'Kolaka', '6281254233445'),
-(562, 5, 45, 1, 'trx-202409184394', '2024-09-18 20:14:47', 1, 4, NULL, NULL, 'Kolaka', '6281254233445'),
-(563, 22, 45, 3, 'trx-202409184662', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(565, 125, 45, 11, 'trx-202409188394', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(566, 246, 45, 20, 'trx-202409182499', '2024-09-18 20:14:47', 1, 4, NULL, NULL, 'Kolaka', '6281254233445'),
-(567, 97, 45, 9, 'trx-202409186953', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(568, 279, 45, 22, 'trx-202409187643', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(569, 286, 45, 22, 'trx-202409186988', '2024-09-18 20:14:47', 1, 3, NULL, NULL, 'Kolaka', '6281254233445'),
-(570, 273, 45, 21, 'trx-202409184302', '2024-09-18 20:14:47', 1, 4, NULL, NULL, 'Kolaka', '6281254233445'),
-(572, 263, 45, 21, 'trx-202409180065', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(573, 267, 45, 21, 'trx-202409180260', '2024-09-18 20:14:47', 1, 3, NULL, NULL, 'Kolaka', '6281254233445'),
-(575, 253, 45, 20, 'trx-202409180561', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(578, 256, 45, 20, 'trx-202409186437', '2024-09-18 20:14:47', 1, 3, NULL, NULL, 'Kolaka', '6281254233445'),
-(579, 255, 45, 20, 'trx-202409182844', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(580, 63, 45, 6, 'trx-202409181052', '2024-09-18 20:14:47', 1, 5, NULL, NULL, 'Kolaka', '6281254233445'),
-(581, 69, 45, 6, 'trx-202409183981', '2024-09-18 20:14:47', 2, 4, NULL, NULL, 'Kolaka', '6281254233445'),
-(587, 125, 46, 11, 'trx-202409188373', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(588, 10, 46, 1, 'trx-202409181746', '2024-09-18 20:27:06', 1, 4, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(589, 97, 46, 9, 'trx-202409185585', '2024-09-18 20:27:06', 1, 3, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(590, 21, 46, 3, 'trx-202409181029', '2024-09-18 20:27:06', 1, 4, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(592, 38, 46, 5, 'trx-202409181258', '2024-09-18 20:27:06', 2, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(593, 34, 46, 4, 'trx-202409187341', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(596, 5, 46, 1, 'trx-202409181657', '2024-09-18 20:27:06', 1, 4, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(597, 134, 46, 12, 'trx-202409180040', '2024-09-18 20:27:06', 1, 4, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299');
-INSERT INTO `transactions` (`id`, `item_id`, `user_id`, `seller_id`, `code`, `transaction_time`, `quantity`, `rating`, `rating_time`, `review`, `shipping_address`, `recipient_contact`) VALUES
-(598, 22, 46, 3, 'trx-202409183098', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(599, 63, 46, 6, 'trx-202409189174', '2024-09-18 20:27:06', 1, 2, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(600, 254, 46, 20, 'trx-202409186619', '2024-09-18 20:27:06', 1, 4, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(601, 246, 46, 20, 'trx-202409187568', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(602, 61, 46, 6, 'trx-202409187018', '2024-09-18 20:27:06', 1, 3, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(605, 171, 46, 15, 'trx-202409188794', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(608, 200, 46, 17, 'trx-202409188152', '2024-09-18 20:27:06', 1, 2, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(616, 69, 46, 6, 'trx-202409188809', '2024-09-18 20:27:06', 1, 5, NULL, NULL, 'Jl. Permata Biru\n', '6281341667299'),
-(617, 125, 47, 11, 'trx-202409181262', '2024-09-18 20:39:31', 1, 5, NULL, NULL, 'Kolaka', '6285237815445'),
-(618, 10, 47, 1, 'trx-202409189562', '2024-09-18 20:39:31', 1, 2, NULL, NULL, 'Kolaka', '6285237815445'),
-(619, 134, 47, 12, 'trx-202409185929', '2024-09-18 20:39:31', 1, 3, NULL, NULL, 'Kolaka', '6285237815445'),
-(620, 21, 47, 3, 'trx-202409183276', '2024-09-18 20:39:31', 1, 2, NULL, NULL, 'Kolaka', '6285237815445'),
-(621, 67, 47, 6, 'trx-202409184459', '2024-09-18 20:39:31', 1, 2, NULL, NULL, 'Kolaka', '6285237815445'),
-(622, 40, 47, 5, 'trx-202409189821', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(623, 95, 47, 9, 'trx-202409189254', '2024-09-18 20:39:31', 1, 5, NULL, NULL, 'Kolaka', '6285237815445'),
-(624, 5, 47, 1, 'trx-202409183362', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(627, 246, 47, 20, 'trx-202409189510', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(628, 263, 47, 21, 'trx-202409183646', '2024-09-18 20:39:31', 1, 5, NULL, NULL, 'Kolaka', '6285237815445'),
-(630, 286, 47, 22, 'trx-202409182742', '2024-09-18 20:39:31', 1, 3, NULL, NULL, 'Kolaka', '6285237815445'),
-(631, 273, 47, 21, 'trx-202409187539', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(632, 63, 47, 6, 'trx-202409182877', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(634, 61, 47, 6, 'trx-202409189681', '2024-09-18 20:39:31', 1, 4, NULL, NULL, 'Kolaka', '6285237815445'),
-(635, 267, 47, 21, 'trx-202409181307', '2024-09-18 20:39:31', 1, 3, NULL, NULL, 'Kolaka', '6285237815445'),
-(646, 279, 47, 22, 'trx-202409182652', '2024-09-18 20:39:31', 1, 3, NULL, NULL, 'Kolaka', '6285237815445'),
-(647, 125, 48, 11, 'trx-202409185722', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(648, 67, 48, 6, 'trx-202409186751', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(649, 134, 48, 12, 'trx-202409184178', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(651, 10, 48, 1, 'trx-202409181732', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(652, 63, 48, 6, 'trx-202409189594', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(653, 21, 48, 3, 'trx-202409182123', '2024-09-18 20:48:46', 1, 4, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(654, 38, 48, 5, 'trx-202409184394', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(655, 61, 48, 6, 'trx-202409182356', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(656, 171, 48, 15, 'trx-202409184749', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(658, 200, 48, 17, 'trx-202409182146', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(660, 5, 48, 1, 'trx-202409185085', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(661, 173, 48, 15, 'trx-202409180319', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(670, 286, 48, 22, 'trx-202409183810', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(672, 273, 48, 21, 'trx-202409184905', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(673, 263, 48, 21, 'trx-202409189493', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(675, 267, 48, 21, 'trx-202409180619', '2024-09-18 20:48:46', 1, 3, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(676, 97, 48, 9, 'trx-202409187860', '2024-09-18 20:48:46', 1, 5, NULL, NULL, 'Jl. Badewi', '6281236259549'),
-(677, 125, 49, 11, 'trx-202409182993', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(679, 97, 49, 9, 'trx-202409182034', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(680, 21, 49, 3, 'trx-202409180356', '2024-09-18 20:57:17', 1, 3, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(681, 38, 49, 5, 'trx-202409189683', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(682, 134, 49, 12, 'trx-202409188154', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(684, 67, 49, 6, 'trx-202409186577', '2024-09-18 20:57:17', 1, 3, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(685, 40, 49, 5, 'trx-202409187084', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(686, 5, 49, 1, 'trx-202409188728', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(688, 22, 49, 3, 'trx-202409188898', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(689, 254, 49, 20, 'trx-202409186573', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(690, 256, 49, 20, 'trx-202409187924', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(691, 63, 49, 6, 'trx-202409184905', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(692, 246, 49, 20, 'trx-202409180542', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(693, 173, 49, 15, 'trx-202409185979', '2024-09-18 20:57:17', 1, 2, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(695, 200, 49, 17, 'trx-202409181108', '2024-09-18 20:57:17', 1, 2, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(696, 279, 49, 22, 'trx-202409187081', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(697, 61, 49, 6, 'trx-202409186664', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(698, 286, 49, 22, 'trx-202409187105', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(699, 171, 49, 15, 'trx-202409188433', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(702, 69, 49, 6, 'trx-202409186875', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(703, 249, 49, 20, 'trx-202409181261', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(704, 253, 49, 20, 'trx-202409181396', '2024-09-18 20:57:17', 1, 5, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(705, 87, 49, 9, 'trx-202409182316', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(706, 255, 49, 20, 'trx-202409185848', '2024-09-18 20:57:17', 1, 4, NULL, NULL, 'Jl. Ahmad Mustin\n', '6282194981518'),
-(708, 21, 50, 3, 'trx-202409180479', '2024-09-18 21:07:30', 1, 4, NULL, NULL, 'Kolaka', '6285394087609'),
-(709, 38, 50, 5, 'trx-202409183034', '2024-09-18 21:07:30', 1, 4, NULL, NULL, 'Kolaka', '6285394087609'),
-(712, 125, 50, 11, 'trx-202409187500', '2024-09-18 21:07:30', 1, 5, NULL, NULL, 'Kolaka', '6285394087609'),
-(715, 97, 50, 9, 'trx-202409188295', '2024-09-18 21:07:30', 2, 4, NULL, NULL, 'Kolaka', '6285394087609'),
-(717, 95, 50, 9, 'trx-202409180580', '2024-09-18 21:07:30', 1, 4, NULL, NULL, 'Kolaka', '6285394087609'),
-(719, 67, 50, 6, 'trx-202409182362', '2024-09-18 21:07:30', 1, 2, NULL, NULL, 'Kolaka', '6285394087609'),
-(721, 134, 50, 12, 'trx-202409185090', '2024-09-18 21:07:30', 1, 5, NULL, NULL, 'Kolaka', '6285394087609'),
-(723, 63, 50, 6, 'trx-202409189429', '2024-09-18 21:07:30', 1, 1, NULL, NULL, 'Kolaka', '6285394087609'),
-(724, 61, 50, 6, 'trx-202409183231', '2024-09-18 21:07:30', 1, 1, NULL, NULL, 'Kolaka', '6285394087609'),
-(728, 173, 50, 15, 'trx-202409183675', '2024-09-18 21:07:30', 1, 5, NULL, NULL, 'Kolaka', '6285394087609'),
 (745, 125, 30, 11, 'trx-202410045917', '2024-10-04 22:00:45', 1, 4, NULL, NULL, 'Jl Badewi, Kec Kolaka, Kab Kolaka', '82310185771'),
 (746, 134, 30, 12, 'trx-202410047828', '2024-10-04 22:00:45', 1, 3, NULL, NULL, 'Jl Badewi, Kec Kolaka, Kab Kolaka', '82310185771'),
 (747, 97, 30, 9, 'trx-202410047254', '2024-10-04 22:00:45', 1, 5, NULL, NULL, 'Jl Badewi, Kec Kolaka, Kab Kolaka', '82310185771'),
@@ -1240,7 +1090,8 @@ INSERT INTO `transactions` (`id`, `item_id`, `user_id`, `seller_id`, `code`, `tr
 (785, 10, 32, 1, 'trx-202410059207', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
 (786, 21, 32, 3, 'trx-202410058651', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
 (787, 38, 32, 5, 'trx-202410054000', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
-(788, 34, 32, 4, 'trx-202410050927', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
+(788, 34, 32, 4, 'trx-202410050927', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040');
+INSERT INTO `transactions` (`id`, `item_id`, `user_id`, `seller_id`, `code`, `transaction_time`, `quantity`, `rating`, `rating_time`, `review`, `shipping_address`, `recipient_contact`) VALUES
 (789, 40, 32, 5, 'trx-202410050825', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
 (790, 5, 32, 1, 'trx-202410055572', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
 (791, 22, 32, 3, 'trx-202410054000', '2024-10-05 10:19:11', 1, 1, NULL, NULL, 'Perumnas lalombaa Blok A No.143', '82127214040'),
@@ -1517,11 +1368,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `carts`
 --
 ALTER TABLE `carts`
-<<<<<<< HEAD
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=760;
-=======
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=880;
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -1581,11 +1428,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-<<<<<<< HEAD
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=745;
-=======
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=865;
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
