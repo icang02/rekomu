@@ -26,10 +26,13 @@ class Produk extends Component
   public $imageItem;
   public $percentage;
 
+  public $itemsList = [];
+
   #[Url('show')]
   public $show = 10;
   #[Url('search')]
   public $search;
+
 
   protected $rules = [
     'name'        => ['required'],
@@ -51,6 +54,30 @@ class Produk extends Component
   public function mount()
   {
     $this->percentage = Setting::findOrFail(1)->value;
+    $this->itemsList = Item::all()->keyBy('id')->toArray();
+  }
+
+  public function updatedItemsList($field)
+  {
+    dd($field);
+    $itemId = explode('.', $field)[1];
+    dd($itemId);
+    // $isFeaturedProduct = $this->itemsList[$itemId]['is_featured_product'];
+
+    // Item::where('id', $itemId)->update(['is_featured_product' => $isFeaturedProduct]);
+  }
+
+  public function changeFeaturedProduct($id)
+  {
+    $item = Item::findOrFail($id);
+    $item->update([
+      'is_featured_product' => !$item->is_featured_product
+    ]);
+  
+    $msg = $item->is_featured_product == false ? 'dihapus' : 'ditambahkan';
+    $message = "Produk unggulan $msg : "  .  "$item->name ";
+
+    $this->dispatch('submitted', type: $item->is_featured_product ? 'success' : 'danger', message: $message);
   }
 
   public function updatedSearch()
@@ -106,11 +133,16 @@ class Produk extends Component
     $this->dispatch('submitted', type: 'info', message: "Produk $itemName berhasil dihapus.");
   }
 
+  public function UpdateProdukUnggulan($id)
+  {
+    dd($id);
+  }
+
   #[Title('Produk')]
   public function render()
   {
     if (Auth::user()->group_id == 1) {
-      $items = Item::orderBy('name')
+      $items = Item::orderBy('is_featured_product', 'desc')->orderBy('name')
         ->with('seller.user', 'category')
         ->where(function ($query) {
           $query->where('name', 'like', "%$this->search%")

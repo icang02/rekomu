@@ -200,7 +200,7 @@
                                     @endcan
                                     <th scope="col">Harga</th>
                                     <th scope="col">Harga Koperasi</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col" class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -226,27 +226,46 @@
                                         @can('admin')
                                             <td>{{ $item->seller->user->name }}</td>
                                         @endcan
-                                        <td>{{ formatRupiah($item->real_price) }}</td>
-                                        <td>
+                                        <td class="text-nowrap">{{ formatRupiah($item->real_price) }}</td>
+                                        <td class="text-nowrap">
                                             {{ formatRupiah($item->price) }}
                                             <sup data-bs-toggle="tooltip" title="Naik 5% dari harga awal"
                                                 class="text-success"
                                                 style="font-weight: 900;">+{{ $percentage }}%</sup>
                                         </td>
-                                        <td class="text-nowrap">
-                                            <a href="{{ route('admin.produk.edit', $item->id) }}" wire:navigate
-                                                class="btn btn-sm btn-primary edit-btn d-inline-flex align-items-center"
-                                                style="padding: 6px 9px;">
-                                                <i class="icon-note" style="font-size: 1.2em;"></i>
-                                            </a>
-                                            <button wire:loading.attr="disabled"
-                                                wire:target="getDeleteItem({{ $item->id }})"
-                                                wire:click="getDeleteItem({{ $item->id }})"
-                                                wire:key="delete-item-{{ $item->id }}"
-                                                class="btn btn-danger btn-sm delete-btn d-inline-flex align-items-center"
-                                                style="padding: 6px 9px">
-                                                <i class="icon-trash" style="font-size: 1.2em;"></i>
-                                            </button>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check form-switch text-nowrap p-0">
+                                                        <input class="form-check-input p-0" type="checkbox"
+                                                            id="produk_unggulan{{ $item->id }}"
+                                                            @checked($item->is_featured_product)
+                                                            wire:change="changeFeaturedProduct({{ $item->id }}, $event.target.checked)">
+                                                        <label style="font-size: .8rem !important;"
+                                                            class="form-check-label"
+                                                            for="produk_unggulan{{ $item->id }}">Produk
+                                                            Unggulan</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 ms-2">
+                                                    <div class="text-nowrap">
+                                                        <a href="{{ route('admin.produk.edit', $item->id) }}"
+                                                            wire:navigate
+                                                            class="btn btn-sm btn-primary edit-btn d-inline-flex align-items-center"
+                                                            style="padding: 6px 9px;">
+                                                            <i class="icon-note" style="font-size: 1.2em;"></i>
+                                                        </a>
+                                                        <button wire:loading.attr="disabled"
+                                                            wire:target="getDeleteItem({{ $item->id }})"
+                                                            wire:click="getDeleteItem({{ $item->id }})"
+                                                            wire:key="delete-item-{{ $item->id }}"
+                                                            class="btn btn-danger btn-sm delete-btn d-inline-flex align-items-center"
+                                                            style="padding: 6px 9px">
+                                                            <i class="icon-trash" style="font-size: 1.2em;"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @empty
