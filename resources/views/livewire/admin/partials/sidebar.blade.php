@@ -25,7 +25,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item {{ Route::is('admin.dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('admin.dashboard') }}" wire:navigate>
+                    <a href="{{ route('admin.dashboard') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>

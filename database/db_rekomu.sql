@@ -3,13 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
-<<<<<<< HEAD
--- Waktu pembuatan: 29 Sep 2024 pada 12.54
-=======
--- Waktu pembuatan: 06 Okt 2024 pada 11.45
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
+-- Waktu pembuatan: 06 Okt 2024 pada 11.58
 -- Versi server: 8.0.30
--- Versi PHP: 8.3.11
+-- Versi PHP: 8.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -400,28 +396,17 @@ INSERT INTO `items` (`id`, `category_id`, `seller_id`, `name`, `slug`, `price`, 
 (243, 3, 20, 'Rok Bludru Plisket', '46-rok-bludru-plisket', 84000, 80000, NULL, 'item/Rok Bludru Plisket.jpg', 0),
 (244, 3, 20, 'Kaftan Navy Payet', '46-kaftan-navy-payet', 262500, 250000, NULL, 'item/Kaftan Navy Payet.jpg', 0),
 (245, 3, 20, 'Gamis Sage', '46-gamis-sage', 294000, 280000, NULL, 'item/Gamis Sage.jpg', 0),
-<<<<<<< HEAD
-(246, 3, 20, 'Abaya Black Plisket', '46-abaya-black-plisket', 367500, 350000, 4.2778, 'item/Abaya Black Plisket.jpg', 18),
-=======
 (246, 3, 20, 'Abaya Black Plisket', '46-abaya-black-plisket', 367500, 350000, 4.1429, 'item/Abaya Black Plisket.jpg', 18),
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 (247, 3, 20, 'Gamis Plisket Cerrutty', '46-gamis-plisket-cerrutty', 294000, 280000, NULL, 'item/Gamis Plisket Cerrutty.jpg', 0),
 (248, 3, 20, 'Blouse Payet Premium', '46-blouse-payet-premium', 178500, 170000, NULL, 'item/Blouse Payet Premium.jpg', 0),
 (249, 3, 20, 'Rok Jeans Span', '46-rok-jeans-span', 141750, 135000, 3.7895, 'item/Rok Jeans Span.jpg', 12),
 (250, 3, 20, 'Rajut Crop', '46-rajut-crop', 126000, 120000, NULL, 'item/Rajut Crop.jpg', 0),
 (251, 3, 20, 'Kemeja Polos Linen', '46-kemeja-polos-linen', 115500, 110000, NULL, 'item/Kemeja Polos Linen.jpg', 0),
 (252, 3, 20, 'Rajut Salur', '46-rajut-salur', 136500, 130000, NULL, 'item/Rajut Salur.jpg', 0),
-<<<<<<< HEAD
-(253, 3, 20, 'Kemeja Crinkle', '46-kemeja-crinkle', 126000, 120000, 4.3125, 'item/Kemeja Crinkle.jpg', 11),
-(254, 3, 20, 'Outer Rajut', '46-outer-rajut', 157500, 150000, 4, 'item/Outer Rajut.jpg', 14),
-(255, 3, 20, 'Kemeja Motif', '46-kemeja-motif', 131250, 125000, 3.9375, 'item/Kemeja Motif.jpg', 13),
-(256, 3, 20, 'Outer Crop', '46-outer-crop', 157500, 150000, 3.6667, 'item/Outer Crop.jpg', 11),
-=======
 (253, 3, 20, 'Kemeja Crinkle', '46-kemeja-crinkle', 126000, 120000, 3.95, 'item/Kemeja Crinkle.jpg', 11),
 (254, 3, 20, 'Outer Rajut', '46-outer-rajut', 157500, 150000, 3.8, 'item/Outer Rajut.jpg', 14),
 (255, 3, 20, 'Kemeja Motif', '46-kemeja-motif', 131250, 125000, 3.85, 'item/Kemeja Motif.jpg', 13),
 (256, 3, 20, 'Outer Crop', '46-outer-crop', 157500, 150000, 3.5789, 'item/Outer Crop.jpg', 11),
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 (257, 3, 20, 'Rajut Knit', '46-rajut-knit', 173250, 165000, NULL, 'item/Rajut Knit.jpg', 0),
 (258, 3, 20, 'Outer Rajut Premium', '46-outer-rajut-premium', 126000, 120000, NULL, 'item/Outer Rajut Premium.jpg', 0),
 (259, 3, 20, 'Outer Knit Plisket', '46-outer-knit-plisket', 78750, 75000, NULL, 'item/Outer Knit Plisket.jpg', 0),
@@ -604,12 +589,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-<<<<<<< HEAD
-('MNeY1nTe8hxIrjlgNaGjS2dBSQd3XVg7xyGfM3e2', 43, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN08yTnJQNTBLOEVGS0NzUDFrbjRnMGpuaWJHUjZxNGs1T0NtRWR5SCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9yZWtvbXUudGVzdC9yaXdheWF0LXBlc2FuYW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0Mzt9', 1727614330),
-('YicSmPiFYfMPMSOjtVSWKoTyG4nnzp1cuXE2ZJVt', 43, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUjloOUd5VTQzN3lSV0dKaTgzaXlvNGZpd29yWlBnRWxKM0d5cDZ1MyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9yZWtvbXUudGVzdC9yZWtvbWVuZGFzaSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjQzO30=', 1727536634);
-=======
 ('VhK7tRV6Yv4bZVemsazsHtpFCtvxJRKKZhvhBNhW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiejVBMk56dUJJcFhSbjZRVzNSVUlZWGdlYjYyVnBVUmdUSVBLOU1mVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9yZWtvbXUudGVzdC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1728130124);
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 
 -- --------------------------------------------------------
 
@@ -1517,11 +1497,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `carts`
 --
 ALTER TABLE `carts`
-<<<<<<< HEAD
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=760;
-=======
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=880;
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -1581,11 +1557,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-<<<<<<< HEAD
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=745;
-=======
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=865;
->>>>>>> 41ac10bdbc9c3adf2921355f55f7125fd8f22da2
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
