@@ -48,11 +48,19 @@ class Dashboard extends Component
       $countUlasan    = Transaction::where('seller_id', $umkmId->id)
         ->where('rating', '!=', null)
         ->count();
+      $totalQuantities = DB::table('transactions')
+        ->join('items', 'transactions.item_id', '=', 'items.id') // Join tabel items berdasarkan item_id
+        ->select('items.name', DB::raw('SUM(transactions.quantity) as total_qty'))
+        ->groupBy('transactions.item_id', 'items.name')
+        ->orderBy('total_qty', 'desc') // Urutkan berdasarkan total_qty terbesar
+        ->limit(10) // Ambil 10 qty terbanyak
+        ->get();
 
       return view('livewire.admin.dashboard', compact(
         'countItem',
         'countTransaksi',
-        'countUlasan'
+        'countUlasan',
+        'totalQuantities'
       ));
     }
   }

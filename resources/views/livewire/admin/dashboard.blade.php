@@ -149,53 +149,54 @@
         @endcan
     </div>
 
-    @can('admin')
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card card-round">
-                    <div class="card-header">
-                        <div class="card-head-row">
-                            <div class="card-title">Penjualan Produk</div>
-                            <div class="card-tools">
-                                <a wire:navigate href="{{ route('admin.produk') }}"
-                                    class="btn btn-label-success btn-round btn-sm me-2">
-                                    <span class="btn-label">
-                                        <i class="fa fa-pencil"></i>
-                                    </span>
-                                    Lihat Produk
-                                </a>
-                                {{-- <a href="#" class="btn btn-label-info btn-round btn-sm">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card card-round">
+                <div class="card-header">
+                    <div class="card-head-row">
+                        <div class="card-title">Penjualan Produk</div>
+                        <div class="card-tools">
+                            <a wire:navigate href="{{ route('admin.produk') }}"
+                                class="btn btn-label-success btn-round btn-sm me-2">
+                                <span class="btn-label">
+                                    <i class="fa fa-pencil"></i>
+                                </span>
+                                Lihat Produk
+                            </a>
+                            {{-- <a href="#" class="btn btn-label-info btn-round btn-sm">
                                     <span class="btn-label">
                                         <i class="fa fa-print"></i>
                                     </span>
                                     Print
                                 </a> --}}
-                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-container" style="min-height: 375px">
-                            <canvas id="statisticsChart"></canvas>
-                        </div>
-                        <div id="myChartLegend"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-round">
-                    <div class="card-body pb-0">
-                        <div class="h1 fw-bold float-end text-primary">+10</div>
-                        <h2 class="mb-2">Keterangan</h2>
-                        <ul>
-                           @foreach ($totalQuantities as $item)
-                               <li>{{ "P$loop->iteration : " }} <span class="text-muted">{{ $item->name }}</span> <span style="font-weight: bold;" class="text-primary">({{ "+$item->total_qty" }})</span></li>
-                           @endforeach
-                        </ul>
+                <div class="card-body">
+                    <div class="chart-container" style="min-height: 375px">
+                        <canvas id="statisticsChart"></canvas>
                     </div>
+                    <div id="myChartLegend"></div>
                 </div>
             </div>
         </div>
-        {{-- <div class="row">
+        <div class="col-md-4">
+            <div class="card card-round">
+                <div class="card-body pb-0">
+                    <div class="h1 fw-bold float-end text-primary">+10</div>
+                    <h2 class="mb-2">Keterangan</h2>
+                    <ul>
+                        @foreach ($totalQuantities as $item)
+                            <li>{{ "P$loop->iteration : " }} <span class="text-muted">{{ $item->name }}</span> <span
+                                    style="font-weight: bold;"
+                                    class="text-primary">({{ "+$item->total_qty" }})</span></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="row">
             <div class="col-md-4">
                 <div class="card card-round">
                     <div class="card-body">
@@ -443,7 +444,6 @@
                 </div>
             </div>
         </div> --}}
-    @endcan
 </div>
 
 <script>

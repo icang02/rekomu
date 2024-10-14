@@ -26,7 +26,6 @@ class Produk extends Component
   public $imageItem;
   public $percentage;
 
-  public $itemsList = [];
 
   #[Url('show')]
   public $show = 10;
@@ -54,17 +53,6 @@ class Produk extends Component
   public function mount()
   {
     $this->percentage = Setting::findOrFail(1)->value;
-    $this->itemsList = Item::all()->keyBy('id')->toArray();
-  }
-
-  public function updatedItemsList($field)
-  {
-    dd($field);
-    $itemId = explode('.', $field)[1];
-    dd($itemId);
-    // $isFeaturedProduct = $this->itemsList[$itemId]['is_featured_product'];
-
-    // Item::where('id', $itemId)->update(['is_featured_product' => $isFeaturedProduct]);
   }
 
   public function changeFeaturedProduct($id)
